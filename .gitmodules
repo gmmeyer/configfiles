@@ -1,0 +1,9 @@
+[submodule "dotfiles"]
+	path = dotfiles
+	url = git@github.com:gmmeyer/dotfiles.git
+[submodule "awesome-dangerzone"]
+	path = awesome-dangerzone
+	url = git@github.com:gmmeyer/awesome-dangerzone.git
+[submodule "editor-configs"]
+	path = editor-configs
+	url = git@github.com:gmmeyer/editor-configs.git
