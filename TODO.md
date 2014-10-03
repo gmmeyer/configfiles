@@ -4,6 +4,7 @@
 ## Dotfiles
 
 - Move the files out of dotfiles that don't need to be there.
+  - Before I do that, I have to symlink my existing dotfiles directory to here.
 
 ## Setup Script
 
