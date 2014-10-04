@@ -20,17 +20,17 @@ git clone git@github.com:gmmeyer/configfiles.git $CONFIGFILES
 git -C $CONFIGFILES submodule init
 git -C $CONFIGFILES submodule update
 
-.$CONFIGFILES/repositories.sh
+.$CONFIGFILES'repositories.sh'
 
 sudo apt-get -y update
 
 ln -s $CONFIGFILES"awesome-dangerzone" $DOTCONFIGFILES"awesome"
 ln -s $CONFIGFILES"terminator" $DOTCONFIGFILES"terminator"
 
-.$CONFIGFILES/dotfiles.sh
+.$CONFIGFILES'dotfiles.sh'
 
-.$CONFIGFILES/install.sh
+.$CONFIGFILES'install.sh'
+
+.$CONFIGFILES'env.sh'
 
 echo "All Done!"
-env zsh
-.  ~/.zshrc
