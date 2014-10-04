@@ -13,7 +13,7 @@
 - ~~alphebetize the installed packages to make them easier to manage~~
 - setup nginx automatically
 - Look into [RCM](https://github.com/thoughtbot/rcm)
-
+- 
 - break out the various parts into their own scripts
 
 ## Alternatives
