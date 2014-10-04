@@ -20,6 +20,9 @@ git clone git@github.com:gmmeyer/configfiles.git $CONFIGFILES
 git -C $CONFIGFILES submodule init
 git -C $CONFIGFILES submodule update
 
+git -C $CONFIGFILES"awesome-dangerzone" submodule init
+git -C $CONFIGFILES"awesome-dangerzone" submodule update
+
 .$CONFIGFILES'repositories.sh'
 
 sudo apt-get -y update
