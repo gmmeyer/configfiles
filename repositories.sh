@@ -2,7 +2,7 @@
 
 ## Adding Dropbox
 sudo apt-key adv --keyserver pgp.mit.edu --recv-keys 5044912E
-sudo add-apt-repository "deb http://linux.dropbox.com/ubuntu $(lsb_release -sc) main"
+sudo add-apt-repository "deb http://linux.dropbox.com/ubuntu $(lsb_release -sc) main"OB
 
 ## Adding google chrome
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
@@ -14,11 +14,11 @@ sudo sh -c 'echo "deb http://repository.spotify.com stable non-free" >> /etc/apt
 
 ## Adding Virtualbox
 wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
-sudo sh -c 'echo "deb http://download.virtualbox.org/virtualbox/debian trusty contrib" >> /etc/apt/sources.list.d/virtualbox.list'
+sudo sh -c 'echo "deb http://download.virtualbox.org/virtualbox/debian $(lsb_release -sc) contrib" >> /etc/apt/sources.list.d/virtualbox.list'
 
 ## Adding R
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
-sudo sh -c 'echo "deb http://cran.rstudio.com/bin/linux/ubuntu trusty" >> /etc/apt/sources.list.d/r.list'
+sudo sh -c 'echo "deb http://cran.rstudio.com/bin/linux/ubuntu $(lsb_release -sc)" >> /etc/apt/sources.list.d/r.list'
 
 ## Adding MongoDB
 sudo apt-key adv --keyserver hkp://,keyserver.ubuntu.com:80 --recv 7F0CEB10
