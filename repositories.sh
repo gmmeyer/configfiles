@@ -14,11 +14,11 @@ sudo sh -c 'echo "deb http://repository.spotify.com stable non-free" >> /etc/apt
 
 ## Adding Virtualbox
 wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
-sudo sh -c 'echo "deb http://download.virtualbox.org/virtualbox/debian $(lsb_release -sc) contrib" >> /etc/apt/sources.list.d/virtualbox.list'
+sudo sh -c 'echo "deb http://download.virtualbox.org/virtualbox/debian trusty contrib" >> /etc/apt/sources.list.d/virtualbox.list'
 
 ## Adding R
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
-sudo sh -c 'echo "deb http://cran.rstudio.com/bin/linux/ubuntu $(lsb_release -sc)" >> /etc/apt/sources.list.d/r.list'
+sudo sh -c 'echo "deb http://cran.rstudio.com/bin/linux/ubuntu trusty/" >> /etc/apt/sources.list.d/r.list'
 
 ## Adding MongoDB
 sudo apt-key adv --keyserver hkp://,keyserver.ubuntu.com:80 --recv 7F0CEB10
@@ -27,6 +27,9 @@ echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | 
 ## Adding Heroku Toolbelt
 wget -O- https://toolbelt.heroku.com/apt/release.key | sudo apt-key add -
 echo "deb http://toolbelt.heroku.com/ubuntu ./" | sudo tee /etc/apt/sources.list.d/heroku.list
+
+## The stupid add-apt-repo won't work because this is only realeased for LTS and not for utopic. 
+echo "deb http://ppa.launchpad.net/martin-frost/thoughtbot-rcm/ubuntu trusty main" | sudo tee /etc/apt/sources.list.d/thoughtbot-rcm.list
 
 # Another thing I need to do in this is to generate an ssl key
 PPAS=(
@@ -50,3 +53,4 @@ PPAS=(
 for i in ${PPAS[@]}; do
     sudo add-apt-repository -y 'ppa:'$i
 done
+
