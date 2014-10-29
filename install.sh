@@ -104,3 +104,4 @@ nvm alias default $node_version
 git clone git@github.com:Lokaltog/powerline-fonts.git
 . ~/powerline-fonts/install.sh
 rm -rf ~/powerline-fonts
+fc-cache -fv
