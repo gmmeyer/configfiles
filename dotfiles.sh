@@ -7,38 +7,22 @@ DOTDOTFILES=$HOMEDIR'.dotfiles/'
 DOTCONFIGFILES=$HOMEDIR'.config/'
 BACKUP=$DOTFILES"backup_dotfiles/"
 
+# I need to add a check for these files to see if they are there.
+
+mkdir $DOTDOTFILES
+ln -s $CONFIGFILES'dotfiles/rcrc' $DOTDOTFILES'rcrc'
+
 ln -s $CONFIGFILES'dotfiles' $DOTFILES
-ln -s $CONFIGFILES'dotfiles' $DOTDOTFILES
 
-# Add emacs lisp in there when it becomes useful
-dotfiles=(
-    'bash_profile'
-    'bashrc'
-    'emacs'
-    'emacs.d'
-    'gitconfig'
-    'gitignore'
-    'gitignore_global'
-    'inputrc'
-    'profile'
-    'urxvt'
-    'vim'
-    'vimrc'
-    'Xresources'
-    'zlogin'
-    'zshrc'
-)
+# This is so much cleaner than the previous one.
 
-mkdir $BACKUP
+# RCRC has a fucked up bit in it that makes it impossible to call rcdn
+# and then rcup without getting things from the dotfiles directory that should
+# be excluded. So, I am going to put it together this way, therefore,
+# it won't do that.
 
-for i in ${dotfiles[@]}; do
-  ORIGINAL=$DOTFILES$i
-  TARGET=$HOMEDIR'.'$i
+# This goes first so that .rcrc is put out there
+rcup
 
-  if [ -e $TARGET]
-  then
-    mv $TARGET $BACKUP
-  fi
-
-  ln -s $ORIGINAL $TARGET
-done
+# This goes second so that the dotfiles are all placed out there
+rcup
