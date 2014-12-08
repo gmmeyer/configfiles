@@ -6,40 +6,54 @@ sudo apt-get -y update || true
 # I could just save the apps via dpkg and then reinstall them via the same
 sudo apt-get install -y --install-recommends pipelight-multi nvidia-331-updates
 
-sudo apt-get install -y \
-  aptitude \
-  awesome awesome-extra \
-  atom \
-  blueman \
-  dropbox \
-  emacs24-nox \
-  fontforge \
-  google-chrome-stable google-chrome-beta \
-  heroku-toolbelt \
-  keychain \
-  mongodb-org \
-  network-manager \
-  nginx \
-  nodejs \
-  oracle-java8-installer \
-  pidgin pidgin-plugin-pack pidgin-skype \
-  python python3 \
-  r-base r-recommended \
-  redshift \
-  rcm \
-  redis-server \
-  ruby \
-  rxvt-unicode \
-  skype \
-  spotify-client \
-  sublime-text-installer \
-  synaptic \
-  terminator \
-  tmux \
-  vim \
-  xfce4-goodies xfce4-terminal xfce4-volumed \
-  xfce4-power-manager xubuntu-desktop \
-  zsh
+toinstall=(
+	"aptitude"
+	"awesome"
+	"awesome-extra"
+	"atom"
+	"blueman"
+	"dropbox"
+	"emacs24-nox"
+	"fontforge"
+	"google-chrome-stable"
+	"google-chrome-beta"
+	"heroku-toolbelt"
+	"keychain"
+	"mongodb-org"
+	"network-manager"
+	"nginx"
+	"nodejs"
+	"oracle-java8-installer"
+	"pidgin"
+	"pidgin-plugin-pack"
+	"pidgin-skype"
+	"python"
+	"python3"
+	"r-base"
+	"r-recommended"
+	"redshift"
+	"rcm"
+	"redis-server"
+	"ruby"
+	"rxvt-unicode"
+	"skype"
+	"spotify-client"
+	"sublime-text-installer"
+	"synaptic"
+	"terminator"
+	"tmux"
+	"vim"
+	"xfce4-goodies"
+	"xfce4-terminal"
+	"xfce4-volumed"
+	"xfce4-power-manager"
+	"xubuntu-desktop"
+	"zsh"
+)
+
+for i in ${PPAS[@]}; do
+	sudo apt-get install -y $i
+done
 
 #changes shell to zsh, now that it's installed
 chsh -s $(which zsh)
@@ -94,6 +108,9 @@ curl https://raw.githubusercontent.com/creationix/nvm/v0.17.2/install.sh | bash
 source ~/.nvm/nvm.sh
 
 node_version='v0.11.14'
+nvm install $node_version
+
+node_version='v0.10.33'
 nvm install $node_version
 nvm alias default $node_version
 

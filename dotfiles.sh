@@ -1,10 +1,9 @@
 #!/bin/sh
 
-HOMEDIR='~/'
-CONFIGFILES=$HOMEDIR'configfiles/'
-DOTFILES=$HOMEDIR'dotfiles/'
-DOTDOTFILES=$HOMEDIR'.dotfiles/'
-DOTCONFIGFILES=$HOMEDIR'.config/'
+CONFIGFILES=$HOME'configfiles/'
+DOTFILES=$HOME'dotfiles/'
+DOTDOTFILES=$HOME'.dotfiles/'
+DOTCONFIGFILES=$HOME'.config/'
 BACKUP=$DOTFILES"backup_dotfiles/"
 
 # I need to add a check for these files to see if they are there.
