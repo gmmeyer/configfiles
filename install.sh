@@ -4,56 +4,19 @@ sudo apt-get -y update || true
 
 # needs to be more here
 # I could just save the apps via dpkg and then reinstall them via the same
-sudo apt-get install -y --install-recommends pipelight-multi nvidia-331-updates
+sudo apt-get install -y --install-recommends pipelight-multi
 
-toinstall=(
-	"aptitude"
-	"awesome"
-	"awesome-extra"
-	"atom"
-	"blueman"
-	"dropbox"
-	"emacs24-nox"
-	"fontforge"
-	"google-chrome-stable"
-	"google-chrome-beta"
-	"heroku-toolbelt"
-	"keychain"
-	"mongodb-org"
-	"network-manager"
-	"nginx"
-	"nodejs"
-	"oracle-java8-installer"
-	"pidgin"
-	"pidgin-plugin-pack"
-	"pidgin-skype"
-	"python"
-	"python3"
-	"r-base"
-	"r-recommended"
-	"redshift"
-	"rcm"
-	"redis-server"
-	"ruby"
-	"rxvt-unicode"
-	"skype"
-	"spotify-client"
-	"sublime-text-installer"
-	"synaptic"
-	"terminator"
-	"tmux"
-	"vim"
-	"xfce4-goodies"
-	"xfce4-terminal"
-	"xfce4-volumed"
-	"xfce4-power-manager"
-	"xubuntu-desktop"
-	"zsh"
-)
+sudo apt-get install -y nvidia-331-updates
 
-for i in ${PPAS[@]}; do
-	sudo apt-get install -y $i
-done
+sudo apt-get install -y aptitude awesome awesome-extra atom blueman dropbox \
+  emacs24-nox fontforge google-chrome-stable google-chrome-beta \
+  heroku-toolbelt \
+  keychain mongodb-org network-manager nginx nodejs oracle-java8-installer \
+  pidgin pidgin-plugin-pack pidgin-skype python python3 r-base r-recommended \
+  redshift rcm redis-server ruby rxvt-unicode skype spotify-client \
+  sublime-text-installer synaptic terminator tmux vim xfce4-goodies \
+  xfce4-terminal xfce4-volumed xfce4-power-manager xubuntu-desktop zsh
+
 
 #changes shell to zsh, now that it's installed
 chsh -s $(which zsh)
