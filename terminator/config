@@ -13,7 +13,7 @@
     urgent_bell = True
     use_system_font = False
     foreground_color = "#ffffff"
-    font = DejaVu Sans Mono for Powerline 9
+    font = Ubuntu Mono derivative Powerline 13
     cursor_blink = False
   [[Beta]]
     background_image = None
