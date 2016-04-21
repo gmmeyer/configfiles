@@ -1,17 +1,17 @@
 #!/bin/sh
 
-CONFIGFILES=$HOME'configfiles/'
-DOTFILES=$HOME'dotfiles/'
-DOTDOTFILES=$HOME'.dotfiles/'
-DOTCONFIGFILES=$HOME'.config/'
-BACKUP=$DOTFILES"backup_dotfiles/"
+CONFIGFILES=$HOME'/configfiles/'
+DOTFILES=$HOME'/dotfiles/'
+DOTDOTFILES=$HOME'/.dotfiles/'
+DOTCONFIGFILES=$HOME'/.config/'
+BACKUP=$DOTFILES"/backup_dotfiles/"
 
 # I need to add a check for these files to see if they are there.
 
 mkdir $DOTDOTFILES
-ln -s $CONFIGFILES'dotfiles/rcrc' $DOTDOTFILES'rcrc'
+ln -s $CONFIGFILES'/dotfiles/rcrc' $DOTDOTFILES'/rcrc'
 
-ln -s $CONFIGFILES'dotfiles' $DOTFILES
+ln -s $CONFIGFILES'/dotfiles' $DOTFILES
 
 # This is so much cleaner than the previous one.
 

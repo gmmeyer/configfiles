@@ -9,25 +9,25 @@
 
 # Also, I know there are better ways to do permissions in a script, you don't have to tell me. ;)
 
-CONFIGFILES=$HOME'configfiles/'
-DOTFILES=$HOME'dotfiles/'
-DOTCONFIGFILES=$HOME'.config/'
-BACKUP=$DOTFILES'backup_dotfiles/'
+CONFIGFILES=$HOME'/configfiles/'
+DOTFILES=$HOME'/dotfiles/'
+DOTCONFIGFILES=$HOME'/.config/'
+BACKUP=$DOTFILES'/backup_dotfiles/'
 
-git clone git@github.com:gmmeyer/configfiles.git $CONFIGFILES
+git clone --recursive git@github.com:gmmeyer/configfiles.git $CONFIGFILES
 
 git -C $CONFIGFILES submodule init
 git -C $CONFIGFILES submodule update
 
-git -C $CONFIGFILES"awesome-dangerzone" submodule init
-git -C $CONFIGFILES"awesome-dangerzone" submodule update
+git -C $CONFIGFILES"/awesome-dangerzone" submodule init
+git -C $CONFIGFILES"/awesome-dangerzone" submodule update
 
-./$CONFIGFILES'repositories.sh'
+./$CONFIGFILES'/repositories.sh'
 
 sudo apt-get -y update
 
-ln -s $CONFIGFILES"awesome-dangerzone" $DOTCONFIGFILES"awesome"
-ln -s $CONFIGFILES"terminator" $DOTCONFIGFILES"terminator"
+ln -s $CONFIGFILES"/awesome-dangerzone" $DOTCONFIGFILES"/awesome"
+ln -s $CONFIGFILES"/terminator" $DOTCONFIGFILES"/terminator"
 
 ./$CONFIGFILES'dotfiles.sh'
 
