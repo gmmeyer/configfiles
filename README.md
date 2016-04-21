@@ -1,6 +1,8 @@
 # My setup and config scripts
 ====
 
+DO NOT USE THIS. IT DOES NOT WORK AND WILL LIKELY BREAK SOMETHING. I KEEP IT ONLY AS A REFERENCE.
+
 These are just for me to set up my developer environment.
 I do not intend for anyone else to use them.
 
